@@ -38,7 +38,7 @@ public class Main {
         System.out.println("Сотрудньк с зп мин: " + minSalary.name + "(ID-" + minSalary.getId() + ") - " + minSalary.salary);
         System.out.println("Сотрудньк с зп макс: " + maxSalary.name + "(ID-" + maxSalary.getId() + ") - " + maxSalary.salary);
 
-        System.out.println("Средняя зарплата в месяц===========");
+        System.out.println("Средняя зарплата в месяц===============");
 
         double averageSalary = totalSalary / employees.length;
         System.out.println("Средняя зарплата: " + averageSalary);
