@@ -35,8 +35,8 @@ public class Main {
                 maxSalary = emp;
             }
         }
-        System.out.println("Сотрудньк с зп мин: " + minSalary.name + " - " + minSalary.salary);
-        System.out.println("Сотрудньк с зп макс: " + maxSalary.name + " - " + maxSalary.salary);
+        System.out.println("Сотрудньк с зп мин: " + minSalary.name + "(ID-" + minSalary.getId() + ") - " + minSalary.salary);
+        System.out.println("Сотрудньк с зп макс: " + maxSalary.name + "(ID-" + maxSalary.getId() + ") - " + maxSalary.salary);
 
         System.out.println("Средняя зарплата в месяц===========");
 
