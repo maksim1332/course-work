@@ -1,9 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Employee Book");
-//        String[] listOfEmployees = {"Иванов Иван Иванович", "Мурашкин Юрий Викторовичь", "Байсодыков Руслан Рустамович", "Поряков Никита Иванович", "Кудымов Александр Александровичь"}
-//
-//
+
         Employee[] employees = new Employee[5];
 
         employees[0] = new Employee("Иванов Иван Иванович", 70000);
@@ -33,8 +31,12 @@ public class Main {
             if (emp.salary < minSalary.salary) {
                 minSalary = emp;
             }
-            if emp
+            if (emp.salary > maxSalary.salary) {
+                maxSalary = emp;
+            }
         }
+        System.out.println("Сотрудньк с зп мин: " + minSalary.name + " - " + minSalary.salary);
+        System.out.println("Сотрудньк с зп макс: " + maxSalary.name + " - " + maxSalary.salary);
 
         System.out.println("Средняя зарплата в месяц===========");
 
