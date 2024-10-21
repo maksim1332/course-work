@@ -15,7 +15,7 @@ public class Main {
             System.out.println(emp.name + ": " + emp.salary);
         }
 
-        System.out.println("Общая затрата в месяц на всех сотрудников============");
+        System.out.println("Общая затрата в месяц на всех сотрудников=================");
 
         double totalSalary = 0;
         for (Employee emp : employees) {
