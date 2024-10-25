@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) {
         initEmployees();
         print();
-        System.out.println("Сумма ЗП сотрудников: " + calculateSumOfSalaries());
+        System.out.println("Сумма ЗП сотрудников : " + calculateSumOfSalaries());
         System.out.println("Сотрудник с мин ЗП : " + findEmployeeWithMinSalary());
         System.out.println("Сотрудник с макс ЗП : " + findEmployeeWithMaxSalary());
         System.out.println("Средняя ЗП : " + calculateAverageOfSalaries());
