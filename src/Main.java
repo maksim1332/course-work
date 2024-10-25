@@ -1,46 +1,25 @@
+import java.util.Random;
+
 public class Main {
+    private final static Random RANDOM = new Random();
+    private final static String[] NAMES = {"Иван", "Александр", "Серегей", "Пётр", "Николай", "Инокентий"};
+    private final static String[] SURNAMES = {"Иванов", "Александров", "Серегеев", "Пётров", "Николаев", "Инокентьев"};
+    private final static String[] PATRONYMIC_NAMES = {"Иванович", "Александрович", "Серегеевич", "Пётрович", "Николаевич", "Инокентьевич"};
+
+    private static EmployeeBook employeeBook = new EmployeeBook();
+
     public static void main(String[] args) {
-        System.out.println("Employee Book");
+        initEmployees();
+        employeeBook.printAllEmployees();
+    }
 
-        Employee[] employees = new Employee[5];
-
-        employees[0] = new Employee("Иванов Иван Иванович", 70000);
-        employees[1] = new Employee("Мурашкин Юрий Викторовичь", 60000);
-        employees[2] = new Employee("Байсодыков Руслан Рустамович", 65000);
-        employees[3] = new Employee("Поряков Никита Иванович", 65000);
-        employees[4] = new Employee("Кудымов Александр Александровичь", 15000);
-
-        System.out.println("Список сотрудников:===========");
-        for (Employee emp : employees) {
-            System.out.println(emp.name + ": " + emp.salary);
+    private static void initEmployees() {
+        for (int i = 0; i < 10; i++) {
+            String fullName = SURNAMES[RANDOM.nextInt(SURNAMES.length)] + " " +
+                    NAMES[RANDOM.nextInt(NAMES.length)] + " " +
+                    PATRONYMIC_NAMES[RANDOM.nextInt(PATRONYMIC_NAMES.length)];
+            Employee employee = new Employee(fullName, RANDOM.nextInt(1, 6), RANDOM.nextInt(50_000, 100_000));
+            employeeBook.addEmployee(employee);
         }
-
-        System.out.println("Общая затрата в месяц на всех сотрудников============");
-
-        double totalSalary = 0;
-        for (Employee emp : employees) {
-            totalSalary += emp.salary;
-        }
-        System.out.println("Общая затрата на зп: " + totalSalary);
-
-        System.out.println(" минимальная зп & максимальная зп==========");
-        Employee minSalary = employees[0];
-        Employee maxSalary = employees[0];
-
-        for (Employee emp : employees) {
-            if (emp.salary < minSalary.salary) {
-                minSalary = emp;
-            }
-            if (emp.salary > maxSalary.salary) {
-                maxSalary = emp;
-            }
-        }
-        System.out.println("Сотрудньк с зп мин: " + minSalary.name + "(ID-" + minSalary.getId() + ") - " + minSalary.salary);
-        System.out.println("Сотрудньк с зп макс: " + maxSalary.name + "(ID-" + maxSalary.getId() + ") - " + maxSalary.salary);
-
-        System.out.println("Средняя зарплата в месяц===============");
-
-        double averageSalary = totalSalary / employees.length;
-        System.out.println("Средняя зарплата: " + averageSalary);
     }
 }
